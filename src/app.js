@@ -1,9 +1,12 @@
 const express = require('express')
 
+console.log(__dirname)
+console.log(__filename)
+
 const app = express()
 
 app.get('/', (req, res) => {
-    res.send('Greetings from Express!')
+    res.send('<h1>Greetings from Express</h1>')
 })
 
 app.get('/help', (req, res) => {
@@ -11,11 +14,14 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/about', (req, res) => {
-    res.send('About Page')
+    res.send('<h1>About Page</h1>')
 })
 
 app.get('/weather', (req, res) => {
-    res.send('Your Weather')
+    res.send({
+        forecast: '77 degrees',
+        location: 'Georgia'
+    })
 })
 
 app.listen(3000, () => {

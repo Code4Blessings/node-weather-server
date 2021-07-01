@@ -1,21 +1,18 @@
+const path = require('path')
 const express = require('express')
 
 console.log(__dirname)
-console.log(__filename)
+console.log(path.join(__dirname, '../public'))
 
 const app = express()
+const publicDirectoryPath = path.join(__dirname, '../public')
+const aboutDirectoryPath = path.join(__dirname, '../public/about.html')
+const helpDirectoryPath = path.join(__dirname, '../public/help.html')
 
-app.get('/', (req, res) => {
-    res.send('<h1>Greetings from Express</h1>')
-})
 
-app.get('/help', (req, res) => {
-    res.send('Help Page')
-})
-
-app.get('/about', (req, res) => {
-    res.send('<h1>About Page</h1>')
-})
+app.use(express.static(publicDirectoryPath))
+app.use(express.static(aboutDirectoryPath))
+app.use(express.static(helpDirectoryPath))
 
 app.get('/weather', (req, res) => {
     res.send({

@@ -1,5 +1,7 @@
-# node-weather-server
+# Node-Weather-Server
 
-### Starting the Server
-- Use the command "npm run server"
+- Based on Andrew Meade's Nodejs Udemy Class
+
+
+
 

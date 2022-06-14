@@ -16,7 +16,12 @@ app.get('', (req, res) => {
     })
 })
 
-
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title: 'About Me',
+        name: 'Robin Warden'
+    })
+})
 
 app.get('/weather', (req, res) => {
     res.send({

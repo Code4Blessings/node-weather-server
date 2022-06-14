@@ -5,15 +5,17 @@ const express = require('express')
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 
-//app.com
-//app.com/help
-//app.com/about
-
-const aboutFilePath = path.join(__filename, '../public/about.html')
-const helpFilePath = path.join(__filename, '../public/help.html')
-
-
+app.set('view engine', 'hbs')
+app.set('views', path.join(__dirname, '../views'))
 app.use(express.static(publicDirectoryPath))
+
+app.get('', (req, res) => {
+    res.render('index', {
+        title: 'Weather App',
+        name: 'Robin Warden'
+    })
+})
+
 
 
 app.get('/weather', (req, res) => {

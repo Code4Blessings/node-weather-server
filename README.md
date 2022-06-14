@@ -117,5 +117,9 @@ app.get('/about', (req, res) => {
 
 7. Delete the coresponding index.html file.
 
+#### Challenge: Create a template for the help page
 
+1. Setup a help page to render a help message to the screen
+2. Setup the help route and render the template with an example message,
+3. Visit the route in the browser and see your help message print.
 

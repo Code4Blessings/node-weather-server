@@ -48,7 +48,7 @@ app.listen(3000, () => {
 - A way to make html files into a template see the following steps..
 
 1. NPM install the hbs dependency
-2. Make a folder called 'views' and then a file mocking the name of the html file. For example, instead of writing "index.html", write "index,hbs"
+2. Make a folder called 'views' and then a file, mocking the name of the html file. For example, instead of writing "index.html", write "index,hbs"
 4. Copy and paste the html contents into a new .hbs file
 
 **HTML File**

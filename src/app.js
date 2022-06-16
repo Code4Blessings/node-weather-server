@@ -35,7 +35,9 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help Page',
-        message: 'How can we help you?'
+        message: 'How can we help you?',
+        title: 'Help',
+        name: 'Robin Warden'
     })
 })
 
@@ -43,6 +45,23 @@ app.get('/weather', (req, res) => {
     res.send({
         forecast: '85 degrees',
         location: 'Lawrenceville'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404',{
+        title: 'Error: 404',
+        message: 'Help article not found',
+        name: 'Robin Warden'
+    })
+})
+
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: 'Error 404',
+        message: 'Page not found',
+        name: 'Robin Warden'
     })
 })
 

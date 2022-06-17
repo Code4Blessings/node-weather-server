@@ -2,7 +2,7 @@
 
 - Based on Andrew Meade's Nodejs Udemy Class
 
-**To run program - nodemon app.js -e js,hbs**
+**To run program - npm run server**
 
 ### Intro to Express
 
@@ -139,3 +139,54 @@ app.get('/about', (req, res) => {
     - Page not found
     - Help article not found
 4. Test your work. Visit /what and /help/units
+
+## Query Strings
+
+- Are embedded in the url and always start with a "?" mark with a key value pair (key=value). To add additional options with it we use "&" For example:
+
+```
+
+localhost:3000/products?search=games&rating=5
+
+```
+
+- If you want to make the search query required, you would make an if statement like this
+
+```
+
+app.get('/products', (req, res) => {
+    //To make search required
+    if(!req.query.search) {
+        res.send({
+            error: 'You must provide a search term'
+        })
+    }
+    console.log(req.query.search)
+    res.send({
+        products: []
+    })
+})
+
+```
+
+***If you receive this errror:*** undefined
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+- That means the server tried to respond twice (the first response was "undefined" and second was the headers error), which cannot be done. You can only send 1 response. ***This can be resolved by adding a return statement before "res.send" which will stop the function from continuing to execute after it realizes the search query isn't there***
+
+```
+
+app.get('/products', (req, res) => {
+    //To make search required
+    if(!req.query.search) {
+        return res.send({
+            error: 'You must provide a search term'
+        })
+    }
+    console.log(req.query.search)
+    res.send({
+        products: []
+    })
+})
+
+```
+

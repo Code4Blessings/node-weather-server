@@ -190,3 +190,8 @@ app.get('/products', (req, res) => {
 
 ```
 
+#### Challenge: Update weather endpoint to accept address
+1. No address? Send back an error message
+2. Address? Send back the static JSON
+    - Add address property onto JSON which returns the provided address
+3. Test /weather and /weather?address=lawrenceville

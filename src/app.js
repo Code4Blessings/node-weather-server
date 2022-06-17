@@ -42,9 +42,16 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
+    if(!req.query.address) {
+        return res.send({
+            error: "You must provide an address"
+        })
+    }
+    console.log(req.query.address)
     res.send({
         forecast: '85 degrees',
-        location: 'Lawrenceville'
+        location: 'Lawrenceville',
+        address: req.query.address
     })
 })
 

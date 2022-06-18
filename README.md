@@ -195,3 +195,10 @@ app.get('/products', (req, res) => {
 2. Address? Send back the static JSON
     - Add address property onto JSON which returns the provided address
 3. Test /weather and /weather?address=lawrenceville
+
+#### Challenge: Wire up /weather
+
+1. Require geocode/forecast into app.js
+2. Use the address to geocode
+3. Use the coordinates to get forecast
+4. Send back the real forecast and location

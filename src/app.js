@@ -2,8 +2,9 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 const { dirname } = require('path')
-const foreCast = require('./utils/forecast')
+//const foreCast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
 const app = express()
 
@@ -43,18 +44,34 @@ app.get('/help', (req, res) => {
     })
 })
 
+
 app.get('/weather', (req, res) => {
-    if(!req.query.address) {
-        return res.send({
-            error: "You must provide an address"
-        })
-    }else {
+    const address = req.query.address
+    //console.log(address)
+    geocode(address, (error, {latitude, longitude, location}) => {
+        if(error) {
+            return res.send({error})
+        }
+        forecast(latitude, longitude, (error, forecastData) => {
+        if(error) {
+            return res.send({error: error})
+        }
         res.send({
-            forecast: foreCast(error, {lat}),
-            location: geocode(erro),
-            address: req.query.address
+            forecast: forecastData, location,
+            address: address
         })
-    }
+    })
+})
+    
+   
+    // if(!address) {
+    //     return res.send({
+    //         error: "You must provide an address"
+    //     })
+    // }else {
+        
+
+    //}
 })
 
 app.get('/products', (req, res) => {

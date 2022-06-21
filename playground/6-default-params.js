@@ -27,5 +27,6 @@ const product = {
 
 const transaction = (type, {label, stock = 0} = {}) => {
     console.log(type, label, stock)
-} //returns undefined or nothing at all but no type errors
+} //returns undefined or whatever the default value is equal to but no type errors
 
+transaction('order')

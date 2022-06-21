@@ -4,6 +4,10 @@
 
 **To run program - npm run server**
 
+- This works in conjunction with node-weather-app repository
+
+- The playground files are also a continuation from the lessons learned while building the Node-NotesApp2
+
 ### Intro to Express
 
 ```
@@ -202,3 +206,53 @@ app.get('/products', (req, res) => {
 2. Use the address to geocode
 3. Use the coordinates to get forecast
 4. Send back the real forecast and location
+
+## Default Parameters
+
+``` 
+
+const greeter = (name = 'Person', age) => {
+    //name = 'Person' is the default parameter if none is given when the function is called
+    console.log('Hello ' + name)
+}
+
+greeter('Robin')
+greeter() //Hello Person
+
+```
+
+## Destructuring Default Parameters
+
+const product = {
+    label: 'Red notebook',
+    price: 3,
+    stock: 201,
+    salePrice: undefined,
+    rating: 4.2
+}
+
+const transaction = (type, {label, stock}) => {
+    console.log(type, label, stock)
+}
+
+- transaction('order') //Will give you TypeError: Cannot destructure property `label` of 'undefined' or 'null'.
+
+- Can be destructured with a default parameter as seen below...
+
+```
+
+const transaction = (type, {label, stock = 0} = {}) => {
+    console.log(type, label, stock)
+} //returns undefined or whatever the default value is equal to but no type errors
+
+```
+
+## Fetch 
+
+- Here we are wiring the front-end to this endpoint. But for now we are only printing it to the console which can be found when you accrfess dev tools on localhost:3000
+
+fetch('http://puzzle.mead.io/puzzle').then((response) => {
+    response.json().then((data) => {
+        console.log(data)
+    })
+})

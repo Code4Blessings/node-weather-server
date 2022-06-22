@@ -256,3 +256,17 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
         console.log(data)
     })
 })
+
+#### Challenge: Fetch Weather
+
+1. Setup a call to fetch weather for Boston
+2. Get the parse JSON response
+    - If error property, print error
+    - If no error, print location and forecast
+3. Refresh the broswer and test your work.
+
+#### Challenge: Use input value to get weather
+
+1. Migrate fetch call into the submit callback
+2. Use the search text as the address query string value
+3. Submit the form with a valid and invalid value to test

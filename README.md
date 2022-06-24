@@ -4,6 +4,8 @@
 
 **To run program - npm run server**
 
+**Deployed to https://warden-weather-app.herokuapp.com/ | https://git.heroku.com/warden-weather-app.git**
+
 - This works in conjunction with node-weather-app repository
 
 - The playground files are also a continuation from the lessons learned while building the Node-NotesApp2

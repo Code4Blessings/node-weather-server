@@ -8,6 +8,15 @@
 
 - The playground files are also a continuation from the lessons learned while building the Node-NotesApp2
 
+## Initializing this file for git
+
+1. In the root of the directory, "git init"
+2. git add .
+3. git commit -m "Changed something"
+
+
+
+
 ### Intro to Express
 
 ```

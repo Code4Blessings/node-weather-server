@@ -278,3 +278,5 @@ fetch('http://puzzle.mead.io/puzzle').then((response) => {
 3. If error, render error
 4. If no error, render location and forecast
 5. Test your work! search for errors and valid locations
+
+Learning more about how to use git now.

@@ -1,4 +1,4 @@
-//Fetch 
+//Using Fetch 
 
 
 const weatherForm = document.querySelector('form')

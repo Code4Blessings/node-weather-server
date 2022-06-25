@@ -2,7 +2,7 @@
 
 - Based on Andrew Meade's Nodejs Udemy Class
 
-**To run program - npm run server**
+**To run program locally - npm run server and open localhost:3000**
 
 **Deployed to https://warden-weather-app.herokuapp.com/ | https://git.heroku.com/warden-weather-app.git**
 

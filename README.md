@@ -6,15 +6,14 @@
 
 **Deployed to https://warden-weather-app.herokuapp.com/ | https://git.heroku.com/warden-weather-app.git**
 
-- This works in conjunction with node-weather-app repository
-
-- The playground files are also a continuation from the lessons learned while building the Node-NotesApp2
+- This works in conjunction with - The playground files are also a continuation from the lessons learned while building the Node-NotesApp2
 
 ## Initializing this file for git
 
 1. In the root of the directory, "git init"
 2. git add .
 3. git commit -m "Changed something"
+4. git push -u origin main (git push thereafter)
 
 
 
